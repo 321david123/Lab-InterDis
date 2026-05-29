@@ -7,6 +7,11 @@
 | **Campus** | ITESM Querétaro · 28 mayo 2026 |
 | **Formato** | Reporte |
 
+<!-- En la vista previa (Cmd+Shift+V) las fotos usan ancho fijo; ajusta el número si las quieres más chicas -->
+<style>
+  img.evidencia { width: 420px; max-width: 100%; height: auto; display: block; margin: 0.6em 0; }
+</style>
+
 ---
 
 ## Qué vivimos en el laboratorio
@@ -17,37 +22,37 @@ Llegamos con un reto concreto: habilitar la red de una franquicia nueva antes de
 
 Enchufamos Ethernet a la toma de la mesa y el rollover a la consola del router.
 
-![Ethernet](lab03/img/01-interconexion-admin01-ethernet.png)
+<img class="evidencia" src="lab03/img/01-interconexion-admin01-ethernet.png" alt="Ethernet en Admin01" width="420" />
 
-![Rollover y toma de red](lab03/img/02-cable-rollover-y-toma-red.png)
+<img class="evidencia" src="lab03/img/02-cable-rollover-y-toma-red.png" alt="Rollover y toma de red" width="420" />
 
 ### 2. Encontrar nuestro equipo en el rack
 
 Entre el patch panel localizamos **J-Con**, **J-FE0/0** y **J-FE0/1**; un piso arriba, el switch **ISP PRIMARIO** es el camino de Internet hacia **G0/0/0**.
 
-![Patch panel](lab03/img/03-rack-patch-panel-routers.png)
+<img class="evidencia" src="lab03/img/03-rack-patch-panel-routers.png" alt="Patch panel" width="420" />
 
-![Etiquetas por router](lab03/img/04-rack-routers-etiquetados.png)
+<img class="evidencia" src="lab03/img/04-rack-routers-etiquetados.png" alt="Etiquetas por router" width="420" />
 
-![ISP Primario](lab03/img/05-isp-primario-y-routers.png)
+<img class="evidencia" src="lab03/img/05-isp-primario-y-routers.png" alt="ISP Primario" width="420" />
 
-![Estación cableada](lab03/img/06-estacion-rollover-ethernet.png)
+<img class="evidencia" src="lab03/img/06-estacion-rollover-ethernet.png" alt="Estación cableada" width="420" />
 
 ### 3. Preparar y encender el Router J
 
 Armamos `Configuracion.txt` en Admin01 para pegar comandos más rápido en consola.
 
-![Borrador de configuración](lab03/img/07-configuracion-txt-parte1.png)
+<img class="evidencia" src="lab03/img/07-configuracion-txt-parte1.png" alt="Borrador de configuración" width="420" />
 
 Encendimos el router y cableamos **GE 0/0/0** (ISP) y **GE 0/0/1** (LAN).
 
-![Encendido Router J](lab03/img/08-router-j-encendido.png)
+<img class="evidencia" src="lab03/img/08-router-j-encendido.png" alt="Encendido Router J" width="420" />
 
-![Interfaces GE](lab03/img/09-router-j-cables.png)
+<img class="evidencia" src="lab03/img/09-router-j-cables.png" alt="Interfaces GE" width="420" />
 
 Todavía sin configurar, Windows seguía sin Internet — esperable hasta tener IPs y DHCP.
 
-![Sin red al inicio](lab03/img/10-estado-inicial-sin-red.png)
+<img class="evidencia" src="lab03/img/10-estado-inicial-sin-red.png" alt="Sin red al inicio" width="420" />
 
 ### 4. Configurar el router
 
@@ -59,21 +64,21 @@ Por **Tera Term** dejamos el equipo como **RF-SucursalHmo**: consola con `login 
 | LAN + gateway | G0/0/1 → 192.168.110.126/25 |
 | DHCP | 192.168.110.0/25, DNS 8.8.8.8, excluye .126 |
 
-![Consola Tera Term](lab03/img/12-teraterm-configuracion.png)
+<img class="evidencia" src="lab03/img/12-teraterm-configuracion.png" alt="Consola Tera Term" width="420" />
 
-![Script final](lab03/img/13-configuracion-completa-txt.png)
+<img class="evidencia" src="lab03/img/13-configuracion-completa-txt.png" alt="Script final" width="420" />
 
 El cable de mesa no va directo al router: pasa por el stack de switches del rack.
 
-![Rack de switches](lab03/img/14-rack-switches.png)
+<img class="evidencia" src="lab03/img/14-rack-switches.png" alt="Rack de switches" width="420" />
 
 ### 5. Comprobar que todo funciona
 
 DHCP en Admin01, `ping` a **192.168.110.126**, navegador en **tec.mx** y en **10.25.20.241** (*Arena Borregos*).
 
-![tec.mx](lab03/img/11-navegacion-tec-mx.png)
+<img class="evidencia" src="lab03/img/11-navegacion-tec-mx.png" alt="tec.mx" width="420" />
 
-![Ping y Arena Borregos](lab03/img/15-validacion-ping-navegador.png)
+<img class="evidencia" src="lab03/img/15-validacion-ping-navegador.png" alt="Ping y Arena Borregos" width="420" />
 
 ---
 
